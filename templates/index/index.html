@@ -1,0 +1,1352 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'index/css/swiper.min.css' %}">
+    <link rel="stylesheet" href="{% static 'index/css/index.css' %}">
+    <link rel="shortcut icon" href="{% static 'index/img/b2/title.png' %}"/>
+    <title>贝贝网-买母婴上贝贝!千万妈妈信赖的母婴正品特卖商城</title>
+    <script src="{% static 'index/js/jquery-1.12.0.js' %}"></script>
+    <script src="{% static 'index/js/jquery.cookie.js' %}"></script>
+    <script src="{% static 'index/js/index.js' %}"></script>
+    {#    <script src="{% static 'index/js/home.js' %}"></script>#}
+</head>
+
+<body>
+
+<div id="box">
+    <!--固定窗口========================-->
+    <div class="fix">
+        <ul>
+            <li class="fixBox cart-box">
+                <i class="cart">
+                    <div class="headCart">
+                        <ul class="cart-list">
+                            <li>
+                                <div class="cart-img">
+                                    <img src="{% static 'product-detailes/img/goods detail/small-1.jpg' %}" alt="">
+                                </div>
+                                <div class="cart-con">
+                                    <p class="conDetail"><a href="#">鸾恋树 新品双面呢修身中长款羊毛呢子大衣</a></p>
+                                    <p class="conSize">颜色：藕色 <span>尺码：110</span></p>
+                                </div>
+                                <div class="cart-price">
+                                    <p class="priceInt">￥<b>79.00</b></p>
+                                    <p class="priceNum">x<b></b></p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="cart-account">
+                            <div class="accountPrice">
+                                <span> 小计:<b>￥</b> <strong> </strong></span>
+                            </div>
+                            <div class="accountGo">
+                                <i class="cart-icon"></i>
+                                <span>去购物车结算</span>
+                            </div>
+                        </div>
+                    </div>
+                </i>
+                <b class="cartNum">0</b>
+            </li>
+            <li class="fixBox phone-box">
+                <i class="phone">
+                    <div class="code">
+                        <p>下载手机APP</p>
+                        <p>随时随地看伤心</p>
+                        <img src="{% static 'index/img/b1/code.jpg' %}" alt="">
+                    </div>
+                </i>
+
+            </li>
+            <li class="fixBox people-box"><i class="people"></i><span>联系客服</span></li>
+            <li class="fixBox back-box"><i class="back"></i><span>回到顶部</span></li>
+        </ul>
+    </div>
+    <!--顶部导航===================================================================-->
+    <div class="top-nav">
+        <div class="wrapper">
+            <ul>
+                {% if user %}
+                    <li>
+                        {{ user.username }}
+                    </li>
+                    <li>
+                        <a href="{% url 'app:logout' %}">退出</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{% url 'app:login' %}">登录</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'app:register' %}">免费注册</a>
+                    </li>
+                {% endif %}
+                <li class="seg"></li>
+                <li>
+                    <a href="#">商家中心</a>
+                </li>
+                <li class="seg"></li>
+                <li class="contact-service">
+                    <a href="#"><i class="person"></i>联系客服</a>
+                    <i class="top-v"></i>
+                    <!--联系客服，帮助中心 mouseover-->
+                    <div class="top-help">
+                        <a href="#">帮助中心</a>
+                        <i class="mark"></i>
+                    </div>
+                </li>
+                <li class="seg"></li>
+                <li class="attention">
+                    <a href="#">关注<i class="top-v2"></i></a>
+                    <div class="top-club">
+                        <div class="club-left">
+                            <p>微信号：beibeiclub</p>
+                            <img src="{% static 'index/img/b0/beibeiclub.png' %}" alt="">
+                            <p style="margin-top: -15px">订阅贝贝官网微信</p>
+                        </div>
+                        <div class="club-right">
+                            <img src="{% static 'index/img/b0/top-qq.png' %}" alt="">
+                            <img src="{% static 'index/img/b0/top-weibo.png' %}" alt="">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--head头部====================================================================-->
+    <div id="head">
+        <div class="wrapper">
+            <div class="main-logo">
+                <div id="logo">
+                    <i></i>
+                    <img class="logo-left" src="{% static 'index/img/b0/head-left.png' %}" alt="">
+                    <img class="logo-right" src="{% static 'index/img/b0/head_right.png' %}" alt="">
+                </div>
+                <div id="head-car">
+                    <a href="{% url 'app:cart' %}">
+                        <img class="logo-car" src="{% static 'index/img/b0/head-car.png' %}" alt="">
+                    </a>
+
+                    <!--购物车-->
+                    <div class="headCart">
+                        <ul class="cart-list">
+                            <li>
+                                <div class="cart-img">
+                                    <img src="{% static 'index/img/goods detail/small-1.jpg' %}" alt="">
+                                </div>
+                                <div class="cart-con">
+                                    <p class="conDetail"><a href="#">鸾恋树 新品双面呢修身中长款羊毛呢子大衣</a></p>
+                                    <p class="conSize">颜色：藕色 <span>尺码：110</span></p>
+                                </div>
+                                <div class="cart-price">
+                                    <p class="priceInt">￥79.00</p>
+                                    <p class="priceNum">x1</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="cart-account">
+                            <div class="accountPrice">
+                                <span> 小计:<b>￥</b> <strong> 156.00</strong></span>
+                            </div>
+                            <div class="accountGo">
+                                <i class="cart-icon"></i>
+                                <a href="{% url 'app:cart' %}">去购物车结算</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="main-nav">
+            <div class="wrapper">
+                <a href="#" class="head-cur">首页</a>
+                <a href="#">全球购</a>
+                <a href="#">限量购</a>
+                <a href="#">正品保证</a>
+                <a href="#">手机客服端</a>
+                <div class="head-buy">
+                    <span>
+                        在售分类 <i class="head-v"> <img src="{% static 'index/img/b2/sale-v.png' %}" alt=""></i>
+                    </span>
+
+                    <div class="head-more">
+                        <ul class="h-thins">
+                            <li>热销分类</li>
+                            <li>儿童服饰</li>
+                            <li>婴儿装</li>
+                            <li>婴童鞋</li>
+                            <li>奶粉辅食</li>
+                            <li>纸尿裤</li>
+                            <li>哺育喂养</li>
+                            <li>洗护清洁</li>
+                            <li>睡眠出行</li>
+                            <li>玩具文体</li>
+                            <li>孕妈专区</li>
+                            <li>流行服饰</li>
+                            <li>鞋包配饰</li>
+                            <li>居家百货</li>
+                            <li>美妆个护</li>
+                        </ul>
+                        <div class="h-con">
+                            <ul class="h-concrete" style="display: block">
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-1.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-2.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-3.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-4.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-5.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-1.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-2.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-3.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-4.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-5.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-1.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-2.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-3.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-4.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-5.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+
+                            </ul>
+                            <ul class="h-concrete">
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-11.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-12.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-13.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-14.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-15.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-11.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-12.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-13.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-14.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-15.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-11.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-12.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-13.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-14.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-15.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                            </ul>
+                            <ul class="h-concrete">
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-6.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-7.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-8.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-9.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-10.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-6.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-7.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-8.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-9.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-10.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-6.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-7.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-8.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-9.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-10.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                            </ul>
+                            <ul class="h-concrete">
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-16.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-17.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-18.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-19.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-20.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-16.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-17.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-18.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-19.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-20.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-16.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-17.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-18.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-19.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-20.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                            </ul>
+                            <ul class="h-concrete">
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-21.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-22.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-23.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-24.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-25.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-21.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-22.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-23.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-24.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-25.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-21.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-22.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-23.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-24.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-25.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                            </ul>
+                            <ul class="h-concrete">
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-26.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-27.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-28.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-29.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-30.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-21.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-22.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-23.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-24.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-25.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-21.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-22.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-23.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-24.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-25.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                            </ul>
+                            <ul class="h-concrete">
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-31.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-32.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-33.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-34.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-35.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-21.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-22.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-23.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-24.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-25.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                            </ul>
+                            <ul class="h-concrete">
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-36.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-37.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-38.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-39.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-40.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                            </ul>
+                            <ul class="h-concrete">
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-11.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-12.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-13.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-14.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-15.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                            </ul>
+                            <ul class="h-concrete">
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-11.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-12.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-13.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-14.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-15.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                            </ul>
+                            <ul class="h-concrete">
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-21.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-22.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-23.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-24.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-25.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                            </ul>
+                            <ul class="h-concrete">
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-11.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-12.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-13.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-14.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-15.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                            </ul>
+                            <ul class="h-concrete">
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-31.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-32.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-33.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-34.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-35.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                            </ul>
+                            <ul class="h-concrete">
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-11.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-12.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-13.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-14.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-15.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                            </ul>
+                            <ul class="h-concrete">
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-1.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-2.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-3.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-4.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/concrete-5.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="head-btn"><input type="text" placeholder="搜索商品或品牌"> <i class="head-search"></i></div>
+            </div>
+        </div>
+    </div>
+    <!--container内容部分=======================================================-->
+    <div id="container">
+        <!--导航--------------->
+        <div class="sub-nav">
+            <div class="wrapper">
+                <ul>
+                    <li class="red-line beibei" style="display: none"><a href="#"><img
+                            src="{% static 'index/img/b2/beibei.png' %}" alt=""></a></li>
+                    <li class="red-line"><a href="#">童装</a></li>
+                    <li class="red-line"><a href="#">童鞋</a></li>
+                    <li class="red-line"><a href="#">用品</a></li>
+                    <li class="red-line"><a href="#">玩具</a></li>
+                    <li class="red-line"><a href="#">女装</a></li>
+                    <li class="red-line"><a href="#">居家</a></li>
+                    <li class="red-line"><a href="#">食品</a></li>
+                    <li class="red-line"><a href="#">美妆</a></li>
+                    <li class="red-line"><a href="#">奶粉</a></li>
+                    <li class="red-line"><a href="#">童鞋</a></li>
+                    <li class="red-line"><a href="#">纸尿裤</a> <i class="hot"></i></li>
+                    <li class="nav-sex">
+                        <a href="#">性别年龄</a>
+                        <div class="sex">
+                            <ul>
+                                <li>
+                                    <p style="text-align: left;margin-left: 10px">男孩</p>
+                                    <p>
+                                        <a href="#">0-1岁</a>
+                                        <a href="#">1-3岁</a>
+                                        <a href="#">3-6岁</a>
+                                        <a href="#">6-9岁</a>
+                                        <a href="#">9-12岁</a>
+                                    </p>
+
+                                </li>
+                                <li>
+                                    <p style="text-align: left;margin-left: 10px">女孩</p>
+                                    <p>
+                                        <a href="#">0-1岁</a>
+                                        <a href="#">1-3岁</a>
+                                        <a href="#">3-6岁</a>
+                                        <a href="#">6-9岁</a>
+                                        <a href="#">9-12岁</a>
+                                    </p>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-tomorrow"><span></span>精彩预告</li>
+                    <li class="nav-world"><span></span>全球购</li>
+                    <li class="nav-sale"><span></span>限量购</li>
+                    <!--<li class="red-line"></li>-->
+                </ul>
+            </div>
+        </div>
+        <!--轮播图------------------------------>
+        <div id="carousel">
+            <!--动态获取轮播图上的商品定位-->
+            <div class="smallImg">
+                <ul class="carousel-list">
+                    <li>
+                        <a href="">
+                            <div class="con-price">￥<b>39</b></div>
+                            <img src="{% static 'index/img/b2/smallImg-1.jpg' %}" alt="">
+                            <p>限件999件</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 轮播图片-->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="{% static 'index/img/b2/lunbo-1.jpg' %}" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{% static 'index/img/b2/lunbo-2.jpg' %}" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{% static 'index/img/b2/lunbo-3.jpg' %}" alt="">
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+        <!--content===========================================================-->
+        <div class="content">
+            <div class="wrapper">
+                <!--今日特卖-->
+                <div class="sale">
+                    <div class="sale-left"><b>今日特卖</b> <strong></strong><span>每天9点准时上新</span></div>
+                    <div class="sale-right">
+                        定制我的专属特卖，立即
+                        <a href="#">[登录]</a>
+                        体验
+                    </div>
+                </div>
+                <!--商品图片，今日特卖下面的内容   动态获取-->
+                <div class="detail">
+                    <!--动态获取-->
+                    <div class="detail-con">
+                        <img src="{% static 'index/img/b1/detail-1.jpg' %}" alt="">
+                        <div class="countdown">
+                            <i class="clock"></i>
+                            <span>剩余：3天10小时23分钟20秒</span>
+                        </div>
+                        <div class="intimate">
+                            <h3>南极人童装内衣专场</h3>
+                            <span>
+                              "南极人，成立于1997年, 是中国最早成立的内衣企业之一，首创保暖内衣产品，开创了中国内衣行业发展的新道路。
+                         历经18年的成长蜕变，南极人已经在内衣、母婴、服装、床品&amp;布艺、厨品、鞋品、服饰配件、户外、家电等9大
+                         品类的55大类目产品线中取得突出的成绩，签约国民好媳妇海清，共同为国人带来 “全品类消费品王国”，努力打
+                         造让用户尖叫的产品，创造极致的用户体验。"
+                         </span>
+                        </div>
+                        <div class="discount">
+                            <i class="dis-img"></i>
+                            <span>满2件9.2折</span>
+                        </div>
+                        <div class="dis-enter">
+                            1折起特卖 &gt;&gt;
+                        </div>
+                    </div>
+                    <div class="detail-con">
+                        <img src="{% static 'index/img/b1/detail-1.jpg' %}" alt="">
+                        <div class="countdown">
+                            <i class="clock"></i>
+                            <span>剩余：3天10小时23分钟20秒</span>
+                        </div>
+                        <div class="intimate">
+                            <h3>南极人童装内衣专场</h3>
+                            <span>
+                              "南极人，成立于1997年, 是中国最早成立的内衣企业之一，首创保暖内衣产品，开创了中国内衣行业发展的新道路。
+                         历经18年的成长蜕变，南极人已经在内衣、母婴、服装、床品&amp;布艺、厨品、鞋品、服饰配件、户外、家电等9大
+                         品类的55大类目产品线中取得突出的成绩，签约国民好媳妇海清，共同为国人带来 “全品类消费品王国”，努力打
+                         造让用户尖叫的产品，创造极致的用户体验。"
+                         </span>
+                        </div>
+                        <div class="discount">
+                            <i class="dis-img"></i>
+                            <span>满2件9.2折</span>
+                        </div>
+                        <div class="dis-enter">
+                            1折起特卖 &gt;&gt;
+                        </div>
+                    </div>
+                </div>
+                <div class="brand">
+                    <ul class="b-main">
+                        <li><a href="#">今日优选</a></li>
+                        <li><a href="#">精彩预告</a></li>
+                    </ul>
+                    <ul class="b-good" style="display: block">
+                        <li><img src="{% static 'index/img/b1/brand-1.jpg' %}" alt=""></li>
+                        <li><img src="{% static 'index/img/b1/brand-2.jpg' %}" alt=""></li>
+                        <li><img src="{% static 'index/img/b1/brand-3.jpg' %}" alt=""></li>
+                        <li><img src="{% static 'index/img/b1/brand-4.png' %}" alt=""></li>
+                        <li><img src="{% static 'index/img/b1/brand-5.jpg' %}" alt=""></li>
+                        <li><img src="{% static 'index/img/b1/brand-6.jpg' %}" alt=""></li>
+                        <li><img src="{% static 'index/img/b1/brand-7.png' %}" alt=""></li>
+                        <li><img src="{% static 'index/img/b1/brand-8.jpg' %}" alt=""></li>
+                        <li><img src="{% static 'index/img/b1/brand-9.jpg' %}" alt=""></li>
+                        <li><img src="{% static 'index/img/b1/brand-10.jpg' %}" alt=""></li>
+                    </ul>
+                    <ul class="b-good">
+                        <li><img src="{% static 'index/img/b1/brand-11.jpg' %}" alt=""></li>
+                        <li><img src="{% static 'index/img/b1/brand-12.jpg' %}" alt=""></li>
+                        <li><img src="{% static 'index/img/b1/brand-13.jpg' %}" alt=""></li>
+                        <li><img src="{% static 'index/img/b1/brand-14.jpg' %}" alt=""></li>
+                        <li><img src="{% static 'index/img/b1/brand-15.jpg' %}" alt=""></li>
+                        <li><img src="{% static 'index/img/b1/brand-16.jpg' %}" alt=""></li>
+                        <li><img src="{% static 'index/img/b1/brand-17.jpg' %}" alt=""></li>
+                        <li><img src="{% static 'index/img/b1/brand-18.jpg' %}" alt=""></li>
+                        <li><img src="{% static 'index/img/b1/brand-19.png' %}" alt=""></li>
+                        <li><img src="{% static 'index/img/b1/brand-20.png' %}" alt=""></li>
+                    </ul>
+                    <div class="more">
+                        更多在售品牌 &nbsp;&gt;
+                    </div>
+                </div>
+                <!--================================右侧轮播图-->
+                <div id="boxLunbo">
+                    <ul id="list">
+                        <li>
+                            <img src="{% static 'index/img/b2/carousel-1.jpg' %}"/>
+                            <p><i></i>[全球购]Betta日本手工制作品1</p>
+                        </li>
+                        <li>
+                            <img src="{% static 'index/img/b2/carousel-2.jpg' %}"/>
+                            <p><i></i>[全球购]Betta日本手工制作品1</p>
+                        </li>
+                        <li>
+                            <img src="{% static 'index/img/b2/carousel-3.jpg' %}"/>
+                            <p><i></i>[全球购]Betta日本手工制作品1</p>
+                        </li>
+                    </ul>
+                    <div id="left">&lt;</div>
+                    <div id="right">&gt;</div>
+                </div>
+                <!--热卖排行榜=========-->
+                <div class="hot">
+                    <div class="h-title">
+                        <i class="hot-img"></i>
+                        <span>热卖排行榜</span>
+                    </div>
+                    <div class="h-content">
+                        <div class="h-sale">
+                            <a href="#">童装</a>
+                            <a href="#">童鞋</a>
+                            <a href="#">玩具</a>
+                            <a href="#">用品</a>
+                        </div>
+                        <div class="goods">
+                            <ul class="h-clothes">
+                                <li><img src="{% static 'index/img/b1/hot-1.jpg' %}" alt="">
+                                    <div class="h-con">
+                                        <span>猪猪的故事儿童童装男女童睡衣家居服套装</span>
+                                        <p>￥39.00
+                                            <del>￥108</del>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/hot-2.jpg' %}" alt="">
+                                    <div class="h-con">
+                                        <span>猪猪的故事儿童童装男女童睡衣家居服套装</span>
+                                        <p>￥39.00
+                                            <del>￥108</del>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/hot-3.jpg' %}" alt="">
+                                    <div class="h-con">
+                                        <span>猪猪的故事儿童童装男女童睡衣家居服套装</span>
+                                        <p>￥39.00
+                                            <del>￥108</del>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/hot-4.jpg' %}" alt="">
+                                    <div class="h-con">
+                                        <span>猪猪的故事儿童童装男女童睡衣家居服套装</span>
+                                        <p>￥39.00
+                                            <del>￥108</del>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/hot-5.jpg' %}" alt="">
+                                    <div class="h-con">
+                                        <span>猪猪的故事儿童童装男女童睡衣家居服套装</span>
+                                        <p>￥39.00
+                                            <del>￥108</del>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/hot-6.jpg' %}" alt="">
+                                    <div class="h-con">
+                                        <span>猪猪的故事儿童童装男女童睡衣家居服套装</span>
+                                        <p>￥39.00
+                                            <del>￥108</del>
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="h-clothes" style="display: none">
+                                <li>
+                                    <img src="{% static 'index/img/b1/hot-11.jpg' %}" alt="">
+                                    <div class="h-con">
+                                        <span>海绵宝宝女帆布鞋蝴蝶结魔术贴休闲板鞋球鞋</span>
+                                        <p>￥39.00
+                                            <del>￥108</del>
+                                        </p>
+                                    </div>
+
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/hot-12.jpg' %}" alt="">
+                                    <div class="h-con">
+                                        <span>海绵宝宝女帆布鞋蝴蝶结魔术贴休闲板鞋球鞋</span>
+                                        <p>￥39.00
+                                            <del>￥108</del>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/hot-13.jpg' %}" alt="">
+                                    <div class="h-con">
+                                        <span>海绵宝宝女帆布鞋蝴蝶结魔术贴休闲板鞋球鞋</span>
+                                        <p>￥39.00
+                                            <del>￥108</del>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/hot-14.jpg' %}" alt="">
+                                    <div class="h-con">
+                                        <span>海绵宝宝女帆布鞋蝴蝶结魔术贴休闲板鞋球鞋</span>
+                                        <p>￥39.00
+                                            <del>￥108</del>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/hot-15.jpg' %}" alt="">
+                                    <div class="h-con">
+                                        <span>海绵宝宝女帆布鞋蝴蝶结魔术贴休闲板鞋球鞋</span>
+                                        <p>￥39.00
+                                            <del>￥108</del>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/hot-16.jpg' %}" alt="">
+                                    <div class="h-con">
+                                        <span>海绵宝宝女帆布鞋蝴蝶结魔术贴休闲板鞋球鞋</span>
+                                        <p>￥39.00
+                                            <del>￥108</del>
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="h-clothes" style="display: none">
+                                <li>
+                                    <img src="{% static 'index/img/b1/hot-21.jpg' %}" alt="">
+                                    <div class="h-con">
+                                        <span>海绵宝宝女帆布鞋蝴蝶结魔术贴休闲板鞋球鞋</span>
+                                        <p>￥39.00
+                                            <del>￥108</del>
+                                        </p>
+                                    </div>
+
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/hot-22.jpg' %}" alt="">
+                                    <div class="h-con">
+                                        <span>海绵宝宝女帆布鞋蝴蝶结魔术贴休闲板鞋球鞋</span>
+                                        <p>￥39.00
+                                            <del>￥108</del>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/hot-23.jpg' %}" alt="">
+                                    <div class="h-con">
+                                        <span>海绵宝宝女帆布鞋蝴蝶结魔术贴休闲板鞋球鞋</span>
+                                        <p>￥39.00
+                                            <del>￥108</del>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/hot-24.jpg' %}" alt="">
+                                    <div class="h-con">
+                                        <span>海绵宝宝女帆布鞋蝴蝶结魔术贴休闲板鞋球鞋</span>
+                                        <p>￥39.00
+                                            <del>￥108</del>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/hot-25.jpg' %}" alt="">
+                                    <div class="h-con">
+                                        <span>海绵宝宝女帆布鞋蝴蝶结魔术贴休闲板鞋球鞋</span>
+                                        <p>￥39.00
+                                            <del>￥108</del>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/hot-26.jpg' %}" alt="">
+                                    <div class="h-con">
+                                        <span>海绵宝宝女帆布鞋蝴蝶结魔术贴休闲板鞋球鞋</span>
+                                        <p>￥39.00
+                                            <del>￥108</del>
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="h-clothes" style="display: none">
+                                <li>
+                                    <img src="{% static 'index/img/b1/hot-31.jpg' %}" alt="">
+                                    <div class="h-con">
+                                        <span>看图识字拼音早教发声挂图 认果蔬数字人物动物拼音 全套5件</span>
+                                        <p>￥33.00
+                                            <del>￥108</del>
+                                        </p>
+                                    </div>
+
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/hot-32.jpg' %}" alt="">
+                                    <div class="h-con">
+                                        <span>看图识字拼音早教发声挂图 认果蔬数字人物动物拼音 全套5件</span>
+                                        <p>￥33.00
+                                            <del>￥108</del>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/hot-33.jpg' %}" alt="">
+                                    <div class="h-con">
+                                        <span>看图识字拼音早教发声挂图 认果蔬数字人物动物拼音 全套5件</span>
+                                        <p>￥33.00
+                                            <del>￥108</del>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/hot-34.jpg' %}" alt="">
+                                    <div class="h-con">
+                                        <span>看图识字拼音早教发声挂图 认果蔬数字人物动物拼音 全套5件</span>
+                                        <p>￥33.00
+                                            <del>￥108</del>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/hot-35.jpg' %}" alt="">
+                                    <div class="h-con">
+                                        <span>看图识字拼音早教发声挂图 认果蔬数字人物动物拼音 全套5件</span>
+                                        <p>￥33.00
+                                            <del>￥108</del>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="{% static 'index/img/b1/hot-36.jpg' %}" alt="">
+                                    <div class="h-con">
+                                        <span>看图识字拼音早教发声挂图 认果蔬数字人物动物拼音 全套5件</span>
+                                        <p>￥33.00
+                                            <del>￥108</del>
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="bottom">
+                    <div class="b-top">
+                        <b>最后疯抢</b>
+                        <strong></strong>
+                        <span>特卖扫货倒计时</span>
+                    </div>
+                    <div class="b-content">
+                        <ul>
+                            <!--<li class="b-list">
+                                <img src="../img/b1/bottom-1.jpg" alt="">
+                                <small>满99元减10元，满159元减30元</small>
+                                <p>齐齐熊衣橱换新颜特卖专场 <span><b>1</b>折起</span></p>
+                                <span> <i></i><span class="time"></span></span>
+                            </li>
+                            <li>
+                                <img src="../img/b1/bottom-2.jpg" alt="">
+                                <small>满99元减10元，满159元减30元</small>
+                                <p>齐齐熊衣橱换新颜特卖专场 <span><b>1</b>折起</span></p>
+                                <span> <i></i>剩余：3天10小时23分钟20秒</span>
+                            </li>
+                            <li>
+                                <img src="../img/b1/bottom-3.jpg" alt="">
+                                <small>满99元减10元，满159元减30元</small>
+                                <p>齐齐熊衣橱换新颜特卖专场 <span><b>1</b>折起</span></p>
+                                <span> <i></i>剩余：3天10小时23分钟20秒</span>
+                            </li>
+                            <li>
+                                <img src="../img/b1/bottom-4.jpg" alt="">
+                                <small>满99元减10元，满159元减30元</small>
+                                <p>齐齐熊衣橱换新颜特卖专场 <span><b>1</b>折起</span></p>
+                                <span> <i></i>剩余：3天10小时23分钟20秒</span>
+                            </li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--container尾标签-->
+    <div class="footer">
+        <div class="f-top">
+            <img src="{% static 'index/img/b0/f-top.png' %}" alt="">
+        </div>
+        <div class="f-middle">
+            <div class="wrapper">
+                <dl>
+                    <dt><i class="f-img"></i>新手指南</dt>
+                    <dd><i class="disc"></i>登录注册</dd>
+                    <dd><i class="disc"></i>抢购商品</dd>
+                    <dd><i class="disc"></i>购物车操作</dd>
+                    <dd><i class="disc"></i>下单支付</dd>
+                </dl>
+                <dl>
+                    <dt><i class="f-img"></i>常见问题</dt>
+                    <dd><i class="disc"></i>热门常见问题</dd>
+                    <dd><i class="disc"></i>退款/退货常见问题</dd>
+                    <dd><i class="disc"></i>发货相关</dd>
+                    <dd><i class="disc"></i>平台交易规则</dd>
+                </dl>
+                <dl>
+                    <dt><i class="f-img"></i>账号管理</dt>
+                    <dd><i class="disc"></i>会员注册</dd>
+                    <dd><i class="disc"></i>投诉举报</dd>
+                    <dd><i class="disc"></i>密码管理</dd>
+                    <dd><i class="disc"></i>不良信息处理</dd>
+                </dl>
+                <dl>
+                    <dt><i class="f-img"></i>支付相关</dt>
+                    <dd><i class="disc"></i>在线支付</dd>
+                    <dd><i class="disc"></i>余额支付</dd>
+                </dl>
+                <dl>
+                    <dt><i class="f-img"></i>配送相关</dt>
+                    <dd><i class="disc"></i>配送说明</dd>
+                    <dd><i class="disc"></i>物流信息</dd>
+                    <dd><i class="disc"></i>验货签收</dd>
+                </dl>
+                <dl>
+                    <dt><i class="f-img"></i>消费者保证</dt>
+                    <dd><i class="disc"></i>退货政策</dd>
+                    <dd><i class="disc"></i>退货流程</dd>
+                    <dd><i class="disc"></i>退货方式和时效</dd>
+                    <dd><i class="disc"></i>交易安全保障</dd>
+                </dl>
+                <dl class="f-last">
+                    <dd>
+                        <img src="{% static 'index/img/b0/weixin.png' %}" alt="">
+                        <div>
+                            <p>关注社区</p>
+                            <span>优惠特卖早知道</span>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+
+        </div>
+        <div class="f-bottom">
+            <img src="{% static 'index/img/b2/footer.png' %}" alt="">
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="{% static 'index/js/swiper.min.js' %}"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 1,
+        paginationClickable: true,
+        spaceBetween: 30,
+        loop: true
+    });
+</script>

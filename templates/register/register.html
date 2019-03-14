@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="{% static 'register/css/register.css' %}">
+    <link rel="shortcut icon" href="{% static 'register/img/b2/title.png' %}"/>
+    <script src="{% static 'register/js/jquery-1.12.0.js' %}"></script>
+    <script src="{% static 'register/js/jquery.cookie.js' %}"></script>
+    <script src="{% static 'register/js/register.js' %}"></script>
+
+</head>
+<body>
+<div class="top">
+    <div class="wrapper">
+        <div class="t-left">
+            <img src="{% static 'register/img/b0/head-left.png' %}" alt="">
+        </div>
+        <div class="t-right">
+            <img src="{% static 'register/img/b0/head-left.png' %}" alt="">
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="wrapper">
+        <div id="c-left">
+            <img src="{% static 'register/img/b2/r-club.png' %}" alt="">
+        </div>
+        <div id="c-right">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div id="title">
+                    <b>新用户注册</b>
+                    <span>已有账号？ <a href="{% url 'app:login' %}">直接登录</a></span>
+                </div>
+
+                <!--验证提示================-->
+                <div id="caution">
+                    <div id="c-red"><img src="{% static 'register/img/b0/arrow.png' %}" alt=""></div>
+                    <div id="c-word"></div>
+                </div>
+                <!--手机号-->
+                <div id="phoneNum">
+                    <i></i>
+                    <input id="phone-num" name="phone" type="text" placeholder="您的手机号">
+                </div>
+
+
+                <!--短信校验-->
+                <div id="name">
+                    <i></i>
+                    <input type="text" name="username" placeholder="您的昵称">
+                    <!--<span></span>-->
+                </div>
+
+
+                <!--密码-->
+                <div id="pwdNum">
+                    <i class="person1"></i>
+                    <input type="password" name="password" id="password" placeholder="密码，6-16位字母、数字或符号">
+                    <i class="person2"></i>
+                </div>
+
+
+                <!--注册button按钮-->
+
+
+                <button type="submit" id="registerBtn">提交</button>
+
+
+                <!--提示文字-->
+                <div id="word">
+                    <span>
+                        为保障账户安全，建议密码为6-16位字符，可包含数字、字母和特殊字符。
+                    </span>
+                </div>
+
+                <!--注册接受-->
+                <div id="word2">
+                    <span>
+                       注册即接受 <a href="#">《贝贝使用协议》</a>和 <a href="#">《社区使用协议》</a>
+                    </span>
+                </div>
+
+                <!--快捷登录方式-->
+                <div id="word3">
+                    <span>
+                      快捷登录方式：
+                        <i id="tag-1"></i>
+                        <i id="tag-2"></i>
+                        <i id="tag-3"></i>
+                    </span>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="footNav">
+        <a href="#">首页</a>
+        <a href="#">关于贝贝</a>
+        <a href="#">商家入驻</a>
+        <a href="#">正品保证</a>
+        <a href="#">人才招聘</a>
+        <a href="#">联系我们</a>
+        <a href="#">帮助中心</a>
+        <a href="#">友情链接</a>
+        <a href="#">手机客服端</a>
+        <a href="#">客服在线</a>
+        <a href="#">贝贝公益</a>
+    </div>
+        <div class="copy">
+            <p>浙ICP备12005806号 |食品流通许可证：SP3301041510054925 |出版物经营许可证：新出发零字第00086号</p>
+            <p>&copy; 2014-2015 beibei.com，All Rights Reserved. 客服热线：400-668-0000</p>
+        </div>
+
+</div>
+</body>
+</html>

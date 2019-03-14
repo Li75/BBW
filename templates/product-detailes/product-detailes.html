@@ -1,0 +1,1328 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情</title>
+    <link rel="stylesheet" href="{% static 'product-detailes/css/product details.css' %}">
+    <script src="{% static 'product-detailes/js/jquery-1.12.0.js' %}"></script>
+    <script src="{% static 'product-detailes/js/jquery.cookie.js' %}"></script>
+    <script src="{% static 'product-detailes/js/product details.js' %}"></script>
+</head>
+<body>
+<!--固定窗口========================-->
+<div class="fix">
+    <ul>
+        <li class="cart-box">
+            <i class="cart">
+            </i>
+            <b class="cart0">0</b>
+        </li>
+        <li class="phone-box">
+            <i class="phone">
+                <div class="code">
+                    <p>下载手机APP</p>
+                    <p>随时随地看伤心</p>
+                    <img src="{% static 'product-detailes/img/b1/code.jpg' %}" alt="">
+                </div>
+            </i>
+        </li>
+        <li class="people-box"><i class="people"></i><span>联系客服</span></li>
+        <li class="back-box"><i class="back"></i><span>回到顶部</span></li>
+    </ul>
+</div>
+<!--顶部导航===================================================================-->
+<div class="top-nav">
+    <div class="wrapper">
+        <ul>
+            <li  class="userss" style="display: none">
+                <i class="tag-user"></i>
+                <span style="color: #f34660"> <span class="phoneNum">1511***6514</span> <a href="#" class="quit">[退出]</a></span>
+            </li>
+            <li id="nav-user">您好，
+                <a href="#">请登录</a>
+                <a href="#" class="free-register">免费注册</a>
+            </li>
+            <li class="seg"></li>
+            <li>
+                <a href="#">商家中心</a>
+            </li>
+            <li class="seg"></li>
+            <li class="contact-service">
+                <a href="#"><i class="person"></i>联系客服</a>
+                <i class="top-v"></i>
+                <!--联系客服，帮助中心 mouseover-->
+                <div class="top-help">
+                    <a href="#">帮助中心</a>
+                    <i class="mark"></i>
+                </div>
+            </li>
+            <li class="seg"></li>
+            <li class="attention">
+                <a href="#">关注<i class="top-v2"></i></a>
+                <div class="top-club">
+                    <div class="club-left">
+                        <p>微信号：beibeiclub</p>
+                        <img src="{% static 'product-detailes/img/b0/beibeiclub.png' %}" alt="">
+                        <p style="margin-top: -15px">订阅贝贝官网微信</p>
+                    </div>
+                    <div class="club-right">
+                        <img src="{% static 'product-detailes/img/b0/top-qq.png' %}" alt="">
+                        <img src="{% static 'product-detailes/img/b0/top-weibo.png' %}" alt="">
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--head头部====================================================================-->
+<div id="head">
+    <div class="wrapper">
+        <div class="main-logo">
+            <div id="logo">
+                <i></i>
+                <a href="index.html"><img class="logo-left" src="{% static 'product-detailes/img/b0/head-left.png' %}" alt=""></a>
+                <img class="logo-right" src="{% static 'product-detailes/img/b0/head_right.png' %}" alt="">
+            </div>
+            <div id="head-car">
+                <a href="cart.html">
+                    <img class="logo-car" src="{% static 'product-detailes/img/b0/head-car.png' %}" alt="">
+                </a>
+                <div class="headCart">
+                    <ul class="cart-list">
+                        <!--<li>
+                            <div class="cart-img">
+                                <img src="../img/goods%20detail/small-1.jpg" alt="">
+                            </div>
+                            <div class="cart-con">
+                                <p class="conDetail"><a href="#">鸾恋树 新品双面呢修身中长款羊毛呢子大衣</a></p>
+                                <p class="conSize">颜色：藕色 <span>尺码：110</span></p>
+                            </div>
+                            <div class="cart-price">
+                                <p class="priceInt">￥79.00</p>
+                                <p class="priceNum">x1</p>
+                            </div>
+                        </li>-->
+                    </ul>
+                    <div class="cart-account">
+                        <div class="accountPrice">
+                            <span> 小计:<b>￥</b> <strong> 156.00</strong></span>
+                        </div>
+                        <div class="accountGo">
+                            <i class="cart-icon"></i>
+                            <a href="cart.html">去购物车结算</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main-nav">
+        <div class="wrapper">
+            <a href="#" class="head-cur">首页</a>
+            <a href="#">全球购</a>
+            <a href="#">限量购</a>
+            <a href="#">正品保证</a>
+            <a href="#">手机客服端</a>
+            <div class="head-buy">
+                    <span>
+                        在售分类 <i class="head-v"> <img src="{% static 'product-detailes/img/b2/sale-v.png' %}" alt=""></i>
+                    </span>
+
+                <div class="head-more">
+                    <ul class="h-thins">
+                        <li>热销分类</li>
+                        <li>儿童服饰</li>
+                        <li >婴儿装</li>
+                        <li>婴童鞋</li>
+                        <li>奶粉辅食</li>
+                        <li>纸尿裤</li>
+                        <li>哺育喂养</li>
+                        <li>洗护清洁</li>
+                        <li>睡眠出行</li>
+                        <li>玩具文体</li>
+                        <li>孕妈专区</li>
+                        <li >流行服饰</li>
+                        <li>鞋包配饰</li>
+                        <li>居家百货</li>
+                        <li>美妆个护</li>
+                    </ul>
+                    <div class="h-con">
+                        <ul class="h-concrete" style="display: block">
+                            <li>
+                                <img src="{% static 'product-detailes/img/b1/concrete-1.jpg' %}" alt="">
+                                <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-2.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-3.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-4.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-5.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                        </ul>
+                        <ul class="h-concrete">
+                            <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-11.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-12.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-13.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-14.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-15.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                        </ul>
+                        <ul class="h-concrete">
+                            <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-6.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-7.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-8.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-9.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-10.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                        </ul>
+                        <ul class="h-concrete">
+                            <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-16.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-17.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-18.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-19.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-20.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                        </ul>
+                        <ul class="h-concrete">
+                            <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-21.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-22.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-23.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-24.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-25.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                        </ul>
+                        <ul class="h-concrete">
+                            <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-26.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-27.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-28.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-29.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-30.jpg' %}" alt="">
+                                    <p>婴儿装</p>
+                                </li>
+                        </ul>
+                        <ul class="h-concrete">
+                            <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-31.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-32.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-33.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-34.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-35.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                        </ul>
+                        <ul class="h-concrete">
+                            <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-36.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-37.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-38.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-39.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-40.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                        </ul>
+                        <ul class="h-concrete">
+                            <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-11.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-12.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-13.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-14.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-15.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                        </ul>
+                        <ul class="h-concrete">
+                            <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-11.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-12.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-13.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-14.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-15.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                        </ul>
+                        <ul class="h-concrete">
+                            <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-21.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-22.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-23.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-24.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-25.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                        </ul>
+                        <ul class="h-concrete">
+                            <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-11.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-12.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-13.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-14.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-15.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                        </ul>
+                        <ul class="h-concrete">
+                            <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-31.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-32.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-33.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-34.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-35.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                        </ul>
+                        <ul class="h-concrete">
+                            <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-11.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-12.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-13.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-14.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-15.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                        </ul>
+                        <ul class="h-concrete">
+                            <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-1.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-2.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-3.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-4.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                                <li>
+                                    <img src="{% static 'product-detailes/img/b1/concrete-5.jpg' %}" alt="">
+                                    <p>纸尿裤</p>
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="head-btn"><input type="text" placeholder="搜索商品或品牌"> <i class="head-search"></i></div>
+        </div>
+    </div>
+</div>
+
+<!--content============================================================-->
+<div class="content">
+    <div class="wrapper">
+        <div class="crumb">
+            <div class="crumb-left">
+                <a href="#">首页 ></a>
+                <a href="#">婴童服装 ></a>
+                <a href="#">婴戴维贝拉 ></a>
+                <a href="#">davebella戴维贝拉童装男女宝宝轻柔保暖连帽羽绒服DB4669</a>
+            </div>
+        </div>
+        <!--商品详情========-->
+       <!-- <div class="icon-line"></div>-->
+        <div class="price-line"><img src="{% static 'product-detailes/img/b2/price-info-line.png' %}" alt=""></div>
+        <div class="meta">
+            <div class="meta-left">
+                <!--详情图片-->
+                <div class="m-img">
+                    <div class="main-img">
+                       <!-- <img class="smallImg" src="../img/goods%20detail/big-1.jpg" alt="">-->
+                        <div class="smallArea" ></div>
+                    </div>
+                    <div class="bigArea">
+                        <!--<img class="bigImg" src="../img/goods%20detail/big-1.jpg" alt="">-->
+                    </div>
+                    <span class="lt"><</span>
+                    <div class="m-smallImg">
+                        <ul class="img-list">
+                            <!--<li class="iActive"><img src="../img/goods%20detail/big-1.jpg" alt=""></li>
+                            <li><img src="../img/goods%20detail/big-2.jpg" alt=""></li>
+                            <li><img src="../img/goods%20detail/big-3.jpg" alt=""></li>
+                            <li><img src="../img/goods%20detail/big-4.jpg" alt=""></li>
+                            <li><img src="../img/goods%20detail/big-5.jpg" alt=""></li>
+                            <li><img src="../img/goods%20detail/big-6.jpg" alt=""></li>
+                            <li><img src="../img/goods%20detail/big-7.jpg" alt=""></li>
+                            <li><img src="../img/goods%20detail/big-8.jpg" alt=""></li>-->
+                        </ul>
+                    </div>
+                    <span class="gt">></span>
+                </div>
+                <!--详情介绍-->
+                <div class="m-detail">
+                    <div class="word">
+                       <!-- <h3>
+                            <span>今日特卖</span>
+                            <p>davebella戴维贝拉童装男女宝宝轻柔保暖连帽羽绒服DB4669</p>
+                        </h3>-->
+                    </div>
+
+                    <p>
+                        可爱小耳朵帽子设计 不可拆卸哦 采用结实拉链 轻松拉合 领口挡片 保护宝宝稚嫩肌肤 松紧袖口 更加贴合宝宝手臂 让宝宝穿的舒心 精选优质白鸭绒 轻盈保暖 舒适防风  八色可供选择 风格各异   还有可爱的小动物背包 可携带小物件哦 让宝宝美美的做个小学霸
+                    </p>
+                    <!--价格-->
+                    <div class="price">
+
+                        <div class="p-money">￥
+                           <!-- <b>289.00</b>-->
+                        </div>
+                        <div class="discount">
+                            <p>市场价</p>
+                            <p><del>89.00</del></p>
+                        </div>
+                        <div class="freePost">
+                            <p>折扣</p>
+                            <p>2.2折</p>
+                        </div>
+                        <div class="del">
+                            <p>您节省了</p>
+                            <p>69.10</p>
+                        </div>
+                    </div>
+                    <!--价格下的内容-->
+                    <div class="labels">
+                        <!--运费-->
+                        <div class="attr">
+                            <label>运费</label>
+                            <span>包邮（偏远山区除外）</span>
+                        </div>
+                        <!--优惠-->
+                        <div class="saleAttr">
+                            <label>优惠</label>
+                            <span><em>减</em>本专场满299元减10元 <i></i></span>
+                            <span class="s-last"><em>返</em>购买后约返10个贝壳 <i></i></span>
+                        </div>
+                        <!--颜色-->
+                        <div class="color">
+                            <label>颜色</label>
+                            <ul>
+                                <li class="borderColor">
+                                    <span>
+                                         <img src="{% static 'product-detailes/img/goods detail/small-1.jpg' %}" alt="">
+                                        <span>大红</span>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                         <img src="{% static 'product-detailes/img/goods detail/small-2.jpg' %}" alt="">
+                                        <span>宝蓝</span>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <img src="{% static 'product-detailes/img/goods detail/small-3.jpg' %}" alt="">
+                                        <span>宝蓝</span>
+                                    </span>
+                                </li>
+                                <li>
+                                   <span>
+                                       <img src="{% static 'product-detailes/img/goods detail/small-4.jpg' %}" alt="">
+                                        <span>宝蓝</span>
+                                   </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <img src="{% static 'product-detailes/img/goods detail/small-5.jpg' %}" alt="">
+                                        <span>宝蓝</span>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <img src="{% static 'product-detailes/img/goods detail/small-6.jpg' %}" alt="">
+                                        <span>宝蓝</span>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <img src="{% static 'product-detailes/img/goods detail/small-7.jpg' %}" alt="">
+                                        <span>宝蓝</span>
+                                    </span>
+                                </li>
+                                <li>
+                                   <span>
+                                       <img src="{% static 'product-detailes/img/goods detail/small-8.jpg' %}" alt="">
+                                        <span>宝蓝</span>
+                                   </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--尺码-->
+                        <div class="size">
+                            <label>尺码</label>
+                            <ul>
+                                <li class="disable borderColor">
+                                    <span>73cm(18M)</span>
+                                </li>
+                                <li class="disable">
+                                    <span>80cm(24M)</span>
+                                </li>
+                                <li class="disable">
+                                    <span>90cm(3T)</span>
+                                </li>
+                                <li class="disable">
+                                    <span>100cm(4T) </span>
+                                </li>
+                                <li class="disable">
+                                    <span>110cm(5T)</span>
+                                </li>
+                                <li class="disable">
+                                    <span>120cm(6T)</span>
+                                </li>
+                                <a>查看尺码表</a>
+                            </ul>
+                        </div>
+                        <!--数量-->
+                        <div class="num">
+                            <label>数量</label>
+                            <span>
+                                    <i class="del-num"></i>
+                                    <input type="text" value="1">
+                                    <i class="add-num"></i>
+                            </span>
+                        </div>
+                        <p class="server">服务承诺：全场包邮，全部正品，7天无理由退货，退货补运费</p>
+                        <!--立即抢购按钮-->
+                        <div class="buyBar">
+                            <i></i>
+                            <a>立即抢购</a>
+                        </div>
+                        <!--计时器-->
+                        <div class="time">
+                            <i class="clock"></i>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="meta-right">
+                <div class="title">特卖品牌</div>
+                <div class="r-con">
+                    <p>
+                        <label>品牌：</label>
+                        <span>火火兔</span>
+                    </p>
+                    <p>
+                        <em class="icon-check"></em>
+                        <em class="icon-pay"></em>
+                        <em class="icon-shopId"></em>
+                    </p>
+                    <p>
+                        <label>服务:</label>
+                        <span class="service">本商品由品牌入驻商从广东省广州市发货，并提供售后服务。</span>
+                    </p>
+                </div>
+                <div class="r-bottom">
+                    <p>
+                        <label>品牌综合评分：</label>
+                        <span>4.9</span>
+                    </p>
+                    <p>
+                        <label>发货速度评分：</label>
+                        <span>4.9</span>
+                    </p>
+                    <p>
+                        <label>物流速度评分：</label>
+                        <span>4.9</span>
+                    </p>
+                </div>
+            </div>-->
+        </div>
+        <div class="mart">
+            <div class="mart-items">
+                <div>
+                    <ul class="m-list">
+                        <li>
+                            <div class="items-img"><img src="{% static 'product-detailes/img/goods detail/goods-img1.jpg' %}" alt=""></div>
+                            <span class="m-price">￥199.00</span>
+                            <span class="m-ship">3.9折包邮</span>
+                        </li>
+                        <li>
+                            <div class="items-img"><img src="{% static 'product-detailes/img/goods detail/goods-img2.jpg' %}" alt=""></div>
+                            <span class="m-price">￥238.00</span>
+                            <span class="m-ship">3.9折包邮</span>
+                        </li>
+                        <li>
+                            <div class="items-img"><img src="{% static 'product-detailes/img/goods detail/goods-img3.jpg' %}" alt=""></div>
+                            <span class="m-price">￥99.00</span>
+                            <span class="m-ship">4.9折包邮</span>
+                        </li>
+                        <li>
+                            <div class="items-img"><img src="{% static 'product-detailes/img/goods detail/goods-img4.jpg' %}" alt=""></div>
+                            <span class="m-price">￥79.00</span>
+                            <span class="m-ship">2.6折包邮</span>
+                        </li>
+                        <li>
+                            <div class="items-img"><img src="{% static 'product-detailes/img/goods detail/goods-img5.jpg' %}" alt=""></div>
+                            <span class="m-price">￥79.00</span>
+                            <span class="m-ship">2.6折包邮</span>
+                        </li>
+                        <li>
+                            <div class="items-img"><img src="{% static 'product-detailes/img/goods detail/goods-img6.jpg' %}" alt=""></div>
+                            <span class="m-price">￥79.00</span>
+                            <span class="m-ship">2.6折包邮</span>
+                        </li>
+                        <li>
+                            <div class="items-img"><img src="{% static 'product-detailes/img/goods detail/goods-img7.jpg' %}" alt=""></div>
+                            <span class="m-price">￥79.00</span>
+                            <span class="m-ship">2.6折包邮</span>
+                        </li>
+                        <li>
+                            <div class="items-img"><img src="{% static 'product-detailes/img/goods detail/goods-img8.jpg' %}" alt=""></div>
+                            <span class="m-price">￥79.00</span>
+                            <span class="m-ship">2.6折包邮</span>
+                        </li>
+                    </ul>
+                </div>
+                <span class="m-prev">&lt;</span>
+                <span class="m-next">&gt;</span>
+            </div>
+            <div class="mart-brand">
+                <div class="b-img"><img src="{% static 'product-detailes/img/goods detail/hothot.jpg' %}" alt=""></div>
+                <div class="b-title">火火兔特卖专场</div>
+                <div class="b-discount"><b>2.6</b>折起</div>
+                <div class="b-offers">
+                    <b>多卖多减</b>
+                    <div>满99减10</div>
+                    <div>满299减20</div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="main-left">
+                <!--详情导航-->
+                <div class="main-nav">
+                    <ul>
+                        <li class="goods-nav li-active">
+                            <i class="nav-1 nav-active"></i>
+                            商品详情
+                        </li>
+                        <li class="goods-nav">
+                            <i class="nav-2"></i>
+                            买家口碑
+                        </li>
+                        <li class="goods-nav">
+                            <i class="nav-3"></i>
+                            猜你喜欢
+                        </li>
+                        <li class="goods-nav">
+                            <i class="nav-4"></i>
+                            商品咨询
+                        </li>
+                        <li class="goods-nav">
+                            <i class="nav-5"></i>
+                            贝贝优势
+                        </li>
+                    </ul>
+                    <div class="cart-duplication">
+                        <span class="cart-price">
+                            ￥<strong>25.00</strong>
+                        </span>
+                        <a href="#">
+                            <span>立即抢购</span>
+                            <!--<i class="icon-line"></i>-->
+                        </a>
+
+                    </div>
+                </div>
+                <div class="view-cont">
+                    <!--商品详情-->
+                    <div class="detail-info productPram">
+                        <!--商品参数-->
+                        <div class="p-goods">
+                            <h3>商品参数</h3>
+                            <ul class="v-list">
+                                <li class="goods-active">
+                                    <b>货号：</b>
+                                    <span>G6-8G版</span>
+                                </li>
+                                <li>
+                                    <b>品牌：</b>
+                                    <span>火火兔</span>
+                                </li>
+                                <li>
+                                    <b>产地：</b>
+                                    <span>广东深圳</span>
+                                </li>
+                                <li>
+                                    <b>材质：</b>
+                                    <span>塑料</span>
+                                </li>
+                                <li>
+                                    <b>默认快递：</b>
+                                    <span>邮政国内，顺丰</span>
+                                </li>
+                                <li>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--品牌授权-->
+                        <div class="p-goods">
+                            <h3>品牌授权</h3>
+                            <div class="v-list"><img src="{% static 'product-detailes/img/goods detail/brand.jpg' %}" alt=""></div>
+                        </div>
+                        <!--商品详情-->
+                        <div class="p-goods">
+                            <h3>商品详情</h3>
+                            <div class="v-list">
+                                <img src="{% static 'product-detailes/img/goods detail/brand-1.jpg' %}" alt="">
+                                <img src="{% static 'product-detailes/img/goods detail/brand-2.jpg' %}" alt="">
+                                <img src="{% static 'product-detailes/img/goods detail/brand-3.jpg' %}" alt="">
+                                <img src="{% static 'product-detailes/img/goods detail/brand-4.jpg' %}" alt="">
+                                <img src="{% static 'product-detailes/img/goods detail/brand-5.jpg' %}" alt="">
+                                <img src="{% static 'product-detailes/img/goods detail/brand-6.jpg' %}" alt="">
+                                <img src="{% static 'product-detailes/img/goods detail/brand-7.jpg' %}" alt="">
+                                <img src="{% static 'product-detailes/img/goods detail/brand-8.jpg' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!--买家口碑-->
+                    <div class="detail-info">
+                        <h3>
+                            <i class="nav-2"></i>
+                            买家口碑
+                            <small>本商品由火火兔发货并提供售后服务</small>
+                        </h3>
+                        <div class="comment">
+                            <div class="c-score">
+                                <div class="c-rate">
+                                    <p>商品满意度</p>
+                                    <strong>4.9</strong>
+                                    <div class="c-img"><img src="{% static 'product-detailes/img/goods detail/star.png' %}" alt=""></div>
+                                </div>
+                                <div class="c-scroll">
+                                    <div class="scroll-num">4.9<div class="triangle"></div></div>
+                                    <div class="scroll-bg"></div>
+                                    <div class="scroll-bar">
+                                        <div class="scroll-score-0"></div>
+                                        <div class="scroll-score-1"></div>
+                                        <div class="scroll-score-2"></div>
+                                        <div class="scroll-score-3"></div>
+                                        <div class="scroll-score-4"></div>
+                                    </div>
+                                    <div class="scroll-desc">
+                                        <div class="scroll-desc-0">很不满意</div>
+                                        <div class="scroll-desc-1">不满意</div>
+                                        <div class="scroll-desc-2">一般</div>
+                                        <div class="scroll-desc-3">满意</div>
+                                        <div class="scroll-desc-4">很满意</div>
+                                    </div>
+
+                                </div>
+                                <div class="c-tagBox">
+                                    <div class="tag-label">
+                                        妈妈印象
+                                    </div>
+                                    <div class="tag-list">
+                                        <span>音质不错（1781）</span>
+                                        <span>实惠（430）</span>
+                                        <span>质量不错（345）</span>
+                                        <span>是正品（286）</span>
+                                        <span>和描述的一致（56）</span>
+                                        <span>发货快（50）</span>
+                                        <span>物流快（45）</span>
+                                        <span>功能不错（41）</span>
+                                        <span>颜色不错（39）</span>
+                                        <span>包装好（34）</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="c-list">
+                                <div class="c-filter">
+                                    <span>
+                                        <input type="radio"> <label>全部</label>
+                                        <input type="radio"> <label>晒图</label>
+                                    </span>
+                                </div>
+                                <div class="c-box">
+                                    <!--评论内容-->
+                                    <div class="box-content">
+                                        <span class="c-chart">
+                                                <div class="commentBody">挺好的，是正品，大表哥比小妹妹还喜欢！</div>
+                                                <div class="commentTime"></div>
+                                                <div class="commentBaby">宝宝：9个月</div>
+                                            <img src="{% static 'product-detailes/img/goods detail/chart-1.jpg' %}" alt="">
+                                        </span>
+                                        <span class="c-info">
+                                            <div>颜色：浅丁香</div>
+                                            <div>尺码：150</div>
+                                            <div class="info-tag"></div>
+                                        </span>
+                                        <span class="c-author">
+                                            <div>151***4</div>
+                                            <div><img src="{% static 'product-detailes/img/goods detail/star.png' %}" alt=""></div>
+                                        </span>
+                                    </div>
+                                    <div class="box-content">
+                                        <span class="c-chart">
+                                                <div class="commentBody">挺好的，是正品，大表哥比小妹妹还喜欢！</div>
+                                                <div class="commentTime"></div>
+                                                <div class="commentBaby">宝宝：9个月</div>
+                                            <img src="{% static 'product-detailes/img/goods detail/chart-1.jpg' %}" alt="">
+                                        </span>
+                                        <span class="c-info">
+                                            <div>颜色：浅丁香</div>
+                                            <div>尺码：150</div>
+                                            <div class="info-tag"></div>
+                                        </span>
+                                        <span class="c-author">
+                                            <div>151***4</div>
+                                            <div><img src="{% static 'product-detailes/img/goods detail/star.png' %}" alt=""></div>
+                                        </span>
+                                    </div>
+                                    <div class="box-content">
+                                        <span class="c-chart">
+                                                <div class="commentBody">挺好的，是正品，大表哥比小妹妹还喜欢！</div>
+                                                <div class="commentTime"></div>
+                                                <div class="commentBaby">宝宝：9个月</div>
+                                            <img src="{% static 'product-detailes/img/goods detail/chart-1.jpg' %}" alt="">
+                                        </span>
+                                        <span class="c-info">
+                                            <div>颜色：浅丁香</div>
+                                            <div>尺码：150</div>
+                                            <div class="info-tag"></div>
+                                        </span>
+                                        <span class="c-author">
+                                            <div>151***4</div>
+                                            <div><img src="{% static 'product-detailes/img/goods detail/star.png' %}" alt=""></div>
+                                        </span>
+                                    </div>
+                                    <div class="box-content">
+                                        <span class="c-chart">
+                                                <div class="commentBody">挺好的，是正品，大表哥比小妹妹还喜欢！</div>
+                                                <div class="commentTime"></div>
+                                                <div class="commentBaby">宝宝：9个月</div>
+                                            <img src="{% static 'product-detailes/img/goods detail/chart-1.jpg' %}" alt="">
+                                        </span>
+                                        <span class="c-info">
+                                            <div>颜色：浅丁香</div>
+                                            <div>尺码：150</div>
+                                            <div class="info-tag"></div>
+                                        </span>
+                                        <span class="c-author">
+                                            <div>151***4</div>
+                                            <div><img src="{% static 'product-detailes/img/goods detail/star.png' %}" alt=""></div>
+                                        </span>
+                                    </div>
+                                    <div class="box-content">
+                                        <span class="c-chart">
+                                                <div class="commentBody">挺好的，是正品，大表哥比小妹妹还喜欢！</div>
+                                                <div class="commentTime"></div>
+                                                <div class="commentBaby">宝宝：9个月</div>
+                                            <img src="{% static 'product-detailes/img/goods detail/chart-1.jpg' %}" alt="">
+                                        </span>
+                                        <span class="c-info">
+                                            <div>颜色：浅丁香</div>
+                                            <div>尺码：150</div>
+                                            <div class="info-tag"></div>
+                                        </span>
+                                        <span class="c-author">
+                                            <div>151***4</div>
+                                            <div><img src="{% static 'product-detailes/img/goods detail/star.png' %}" alt=""></div>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="c-pagination">
+                                    <a href="#" class="prev-page">上一页</a>
+                                    <a href="#" class="page-code cur">1</a>
+                                    <a href="#" class="page-code">2</a>
+                                    <a href="#" class="page-code">3</a>
+                                    <a href="#" class="page-code">4</a>
+                                    <a href="#" class="page-code">5</a>
+                                    <a href="#" class="page-code">6</a>
+                                    <span>...</span>
+                                    <a href="#">42</a>
+                                    <a href="#" class="next-page">下一页</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--猜你喜欢-->
+                    <div class="detail-info">
+                        <h3>
+                            <i class="nav-3"></i>
+                            猜你喜欢
+                        </h3>
+                        <div class="recommend">
+                            <ul>
+                                <li>
+                                    <div class="re-img"><img src="{% static 'product-detailes/img/goods detail/recommend-1.jpg' %}" alt=""></div>
+                                    <a href="#">
+                                        <div class="re-name">MIIOW KIDS 猫人儿童 女童福袋礼包2件装58元</div>
+                                        <div class="price-info">
+                                            <span class="price-rmb">￥</span>
+                                            <span class="price-int">58.</span>
+                                            <span class="price-decimal">00</span>
+                                            <span class="price-strike"><del>￥358.00</del></span>
+                                            <span class="price-discount"> 1.6折</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="re-img"><img src="{% static 'product-detailes/img/goods detail/recommend-2.jpg' %}" alt=""></div>
+                                    <a href="#">
+                                        <div class="re-name">MIIOW KIDS 猫人儿童 女童福袋礼包2件装58元</div>
+                                        <div class="price-info">
+                                            <span class="price-rmb">￥</span>
+                                            <span class="price-int">58.</span>
+                                            <span class="price-decimal">00</span>
+                                            <span class="price-strike"><del>￥358.00</del></span>
+                                            <span class="price-discount"> 1.6折</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="re-img"><img src="{% static 'product-detailes/img/goods detail/recommend-3.jpg' %}" alt=""></div>
+                                    <a href="#">
+                                        <div class="re-name">MIIOW KIDS 猫人儿童 女童福袋礼包2件装58元</div>
+                                        <div class="price-info">
+                                            <span class="price-rmb">￥</span>
+                                            <span class="price-int">58.</span>
+                                            <span class="price-decimal">00</span>
+                                            <span class="price-strike"><del>￥358.00</del></span>
+                                            <span class="price-discount"> 1.6折</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="re-img"><img src="{% static 'product-detailes/img/goods detail/recommend-4.jpg' %}" alt=""></div>
+                                    <a href="#">
+                                        <div class="re-name">MIIOW KIDS 猫人儿童 女童福袋礼包2件装58元</div>
+                                        <div class="price-info">
+                                            <span class="price-rmb">￥</span>
+                                            <span class="price-int">58.</span>
+                                            <span class="price-decimal">00</span>
+                                            <span class="price-strike"><del>￥358.00</del></span>
+                                            <span class="price-discount"> 1.6折</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="re-img"><img src="{% static 'product-detailes/img/goods detail/recommend-5.jpg' %}" alt=""></div>
+                                    <a href="#">
+                                        <div class="re-name">MIIOW KIDS 猫人儿童 女童福袋礼包2件装58元</div>
+                                        <div class="price-info">
+                                            <span class="price-rmb">￥</span>
+                                            <span class="price-int">58.</span>
+                                            <span class="price-decimal">00</span>
+                                            <span class="price-strike"><del>￥358.00</del></span>
+                                            <span class="price-discount"> 1.6折</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="re-img"><img src="{% static 'product-detailes/img/goods detail/recommend-6.jpg' %}" alt=""></div>
+                                    <a href="#">
+                                        <div class="re-name">MIIOW KIDS 猫人儿童 女童福袋礼包2件装58元</div>
+                                        <div class="price-info">
+                                            <span class="price-rmb">￥</span>
+                                            <span class="price-int">58.</span>
+                                            <span class="price-decimal">00</span>
+                                            <span class="price-strike"><del>￥358.00</del></span>
+                                            <span class="price-discount"> 1.6折</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="re-img"><img src="{% static 'product-detailes/img/goods detail/recommend-7.jpg' %}" alt=""></div>
+                                    <a href="#">
+                                        <div class="re-name">MIIOW KIDS 猫人儿童 女童福袋礼包2件装58元</div>
+                                        <div class="price-info">
+                                            <span class="price-rmb">￥</span>
+                                            <span class="price-int">58.</span>
+                                            <span class="price-decimal">00</span>
+                                            <span class="price-strike"><del>￥358.00</del></span>
+                                            <span class="price-discount"> 1.6折</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="re-img"><img src="{% static 'product-detailes/img/goods detail/recommend-8.jpg' %}" alt=""></div>
+                                    <a href="#">
+                                        <div class="re-name">MIIOW KIDS 猫人儿童 女童福袋礼包2件装58元</div>
+                                        <div class="price-info">
+                                            <span class="price-rmb">￥</span>
+                                            <span class="price-int">58.</span>
+                                            <span class="price-decimal">00</span>
+                                            <span class="price-strike"><del>￥358.00</del></span>
+                                            <span class="price-discount"> 1.6折</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--商品咨询-->
+                    <div class="detail-info">
+                        <h3>
+                            <i class="nav-4"></i>
+                            商品咨询
+                        </h3>
+                        <div class="goods-consult">
+                            <div class="consult-header">
+                                购买前如有问题，请向贝贝客服咨询
+                                <a href="#">
+                                    <i class="consult-tag"></i>
+                                    联系客服
+                                </a>
+                            </div>
+                            <div class="consult-question">
+                                <div class="consult-q">Q</div>
+                                <div class="consult-content">商品都是正品吗？</div>
+                            </div>
+                            <div class="consult-answer">
+                                <div class="consult-a">A</div>
+                                <div class="consult-content">请放心，贝贝上所售卖的商品均经过品牌授权，确保正品，PICC中国人民财产保险公司为您购买的每一件商品进行承保。若检验出非正品，保险公司将按实付金额的三倍进行赔偿。</div>
+                            </div>
+                            <div class="consult-question">
+                                <div class="consult-q">Q</div>
+                                <div class="consult-content">如何选择尺码？</div>
+                            </div>
+                            <div class="consult-answer">
+                                <div class="consult-a">A</div>
+                                <div class="consult-content">品牌入驻商在详情页面会放置所售商品的尺码表，可能会存在1-2cm的正常误差范围。建议您以平时购买尺码对照选择，买家口碑处其他麻麻的评价也可供参考。如果实在拿不准，买大不买小~</div>
+                            </div>
+                            <div class="consult-question">
+                                <div class="consult-q">Q</div>
+                                <div class="consult-content">订单什么时候发货？快递信息为什么没有更新？</div>
+                            </div>
+                            <div class="consult-answer">
+                                <div class="consult-a">A</div>
+                                <div class="consult-content">正常情况下，下单完成系统就会通知品牌入驻商开始发货。发货后，您可以在我的订单中查看发货状态。由于部分快递公司无法实时更新信息， 因此您看到的物流情况可能会有延迟。</div>
+                            </div>
+                            <div class="consult-question">
+                                <div class="consult-q">Q</div>
+                                <div class="consult-content">订单使用什么快递发货？如何收费？</div>
+                            </div>
+                            <div class="consult-answer">
+                                <div class="consult-a">A</div>
+                                <div class="consult-content">品牌入驻商会在商品参数处填写默认快递，也会根据你的地址自动匹配当地运营较好的快递公司。如果有什么特殊需求，可在提交订单时备注。
+                                    贝贝实行全场包邮，除部分偏远地区外（如新疆、西藏、内蒙古等），您无需承担邮费。</div>
+                            </div>
+                            <div class="consult-question">
+                                <div class="consult-q">Q</div>
+                                <div class="consult-content">网站上显示的市场价和实体店的售价一致吗？</div>
+                            </div>
+                            <div class="consult-answer">
+                                <div class="consult-a">A</div>
+                                <div class="consult-content">贝贝的市场价采集自品牌官网标价、专柜标价或由品牌入驻商提供。由于地区或时间的差异性，可能与您购物时的市场价不一致。标注的市场价仅供参考，不作为购物依据。</div>
+                            </div>
+                            <div class="consult-question">
+                                <div class="consult-q">Q</div>
+                                <div class="consult-content">购买后不喜欢能退货吗？</div>
+                            </div>
+                            <div class="consult-answer">
+                                <div class="consult-a">A</div>
+                                <div class="consult-content">您签收商品之日起的7天之内，商品未经穿着不影响二次销售的情况下，贝贝为您提供七天无理由退货服务。
+                                    查看详细退货政策>></div>
+                            </div>
+                            <div class="consult-question">
+                                <div class="consult-q">Q</div>
+                                <div class="consult-content">商品的市场价是什么？</div>
+                            </div>
+                            <div class="consult-answer">
+                                <div class="consult-a">A</div>
+                                <div class="consult-content">商品的市场价可能是品牌专柜标价、商品吊牌价、由品牌供应商提供的正品零售价（如厂商指导价、建议零售价等）或该商品在贝贝平台上曾经展示过的销售价；由于地区、时间的差异性和市场行情波动，品牌专柜标价、商品吊牌价等可能会与您购物展示的不一致，该价格仅供您参考。</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--贝贝优势-->
+                    <div class="detail-info">
+                        <h3>
+                            <i class="nav-5"></i>
+                            贝贝优势
+                        </h3>
+                        <div class="advantage">
+                            <img src="{% static 'product-detailes/img/goods detail/beibei-advantage.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-right">
+                <div class="title">相似推荐</div>
+                <ul>
+                    <li>
+                        <img src="{% static 'product-detailes/img/goods detail/list-1.jpg' %}" alt="">
+                        <p>阿李罗火火兔G6儿童早教</p>
+                        <span>￥<b>148.00</b></span>
+                        <span><del>￥376.00</del></span>
+                    </li>
+                    <li>
+                        <img src="{% static 'product-detailes/img/goods detail/list-2.jpg' %}" alt="">
+                        <p>阿李罗火火兔G6儿童早教</p>
+                        <span>￥<b>148.00</b></span>
+                        <span><del>￥376.00</del></span>
+                    </li>
+                    <li>
+                        <img src="{% static 'product-detailes/img/goods detail/list-3.jpg' %}" alt="">
+                        <p>阿李罗火火兔G6儿童早教</p>
+                        <span>￥<b>148.00</b></span>
+                        <span><del>￥376.00</del></span>
+                    </li>
+                    <li>
+                        <img src="{% static 'product-detailes/img/goods detail/list-4.jpg' %}" alt="">
+                        <p>阿李罗火火兔G6儿童早教</p>
+                        <span>￥<b>148.00</b></span>
+                        <span><del>￥376.00</del></span>
+                    </li>
+                    <li>
+                        <img src="{% static 'product-detailes/img/goods detail/list-5.jpg' %}" alt="">
+                        <p>阿李罗火火兔G6儿童早教</p>
+                        <span>￥<b>148.00</b></span>
+                        <span><del>￥376.00</del></span>
+                    </li>
+                    <li>
+                        <img src="{% static 'product-detailes/img/goods detail/list-6.jpg' %}" alt="">
+                        <p>阿李罗火火兔G6儿童早教</p>
+                        <span>￥<b>148.00</b></span>
+                        <span><del>￥376.00</del></span>
+                    </li>
+                    <li>
+                        <img src="{% static 'product-detailes/img/goods detail/list-7.jpg' %}" alt="">
+                        <p>阿李罗火火兔G6儿童早教</p>
+                        <span>￥<b>148.00</b></span>
+                        <span><del>￥376.00</del></span>
+                    </li>
+                    <li>
+                        <img src="{% static 'product-detailes/img/goods detail/list-8.jpg' %}" alt="">
+                        <p>阿李罗火火兔G6儿童早教</p>
+                        <span>￥<b>148.00</b></span>
+                        <span><del>￥376.00</del></span>
+                    </li>
+                    <li>
+                        <img src="{% static 'product-detailes/img/goods detail/list-9.jpg' %}" alt="">
+                        <p>阿李罗火火兔G6儿童早教</p>
+                        <span>￥<b>148.00</b></span>
+                        <span><del>￥376.00</del></span>
+                    </li>
+                    <li>
+                        <img src="{% static 'product-detailes/img/goods detail/list-10.jpg' %}" alt="">
+                        <p>阿李罗火火兔G6儿童早教</p>
+                        <span>￥<b>148.00</b></span>
+                        <span><del>￥376.00</del></span>
+                    </li>
+                    <li>
+                        <img src="{% static 'product-detailes/img/goods detail/list-11.jpg' %}" alt="">
+                        <p>阿李罗火火兔G6儿童早教</p>
+                        <span>￥<b>148.00</b></span>
+                        <span><del>￥376.00</del></span>
+                    </li>
+                    <li>
+                        <img src="{% static 'product-detailes/img/goods detail/list-12.jpg' %}" alt="">
+                        <p>阿李罗火火兔G6儿童早教</p>
+                        <span>￥<b>148.00</b></span>
+                        <span><del>￥376.00</del></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+<!--footer-->
+<div class="footer">
+    <div class="foot-nav">
+        <a href="#">首页</a>|
+        <a href="#">关于贝贝</a>|
+        <a href="#">商家入驻</a>|
+        <a href="#">正品保证</a>|
+        <a href="#">人才招聘</a>|
+        <a href="#">联系我们</a>|
+        <a href="#">帮助中心</a>|
+        <a href="#">友情链接</a>|
+        <a href="#">手机客户端</a>|
+        <a href="#">客服在线</a>|
+        <a href="#">贝贝公益</a>|
+        <a href="#">品质</a>
+    </div>
+    <div class="foot-content">
+        <div class="wrapper">
+            <p>浙ICP备12005806号 |
+                食品流通许可证：SP3301041510054925 |
+                出版物经营许可证：新出发零字第00086号</p>
+            <p> 2014-2016 贝贝beibei.com，All Rights Reserved. 客服热线：10107788</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
