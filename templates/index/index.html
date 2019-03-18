@@ -848,13 +848,15 @@
             <!--动态获取轮播图上的商品定位-->
             <div class="smallImg">
                 <ul class="carousel-list">
-                    <li>
-                        <a href="">
-                            <div class="con-price">￥<b>39</b></div>
-                            <img src="{% static 'index/img/b2/smallImg-1.jpg' %}" alt="">
-                            <p>限件999件</p>
+                    {% for good in goods %}
+                        <li>
+                        <a href="{% url 'app:shopdetail' %}">
+                            <div class="con-price">￥<b>{{ good.price }}</b></div>
+                            <img src="{{ good.img }}" alt="">
+                            <p>{{ good.num }}</p>
                         </a>
-                    </li>
+                        </li>
+                    {% endfor %}
                 </ul>
             </div>
 
@@ -1244,30 +1246,30 @@
                     </div>
                     <div class="b-content">
                         <ul>
-                            <!--<li class="b-list">
-                                <img src="../img/b1/bottom-1.jpg" alt="">
+                            <li class="b-list">
+                                <a href="{% url 'app:shopdetail' %}"><img src="{% static 'index/img/b1/bottom-1.jpg' %}" alt=""></a>
                                 <small>满99元减10元，满159元减30元</small>
                                 <p>齐齐熊衣橱换新颜特卖专场 <span><b>1</b>折起</span></p>
                                 <span> <i></i><span class="time"></span></span>
                             </li>
                             <li>
-                                <img src="../img/b1/bottom-2.jpg" alt="">
+                                <img src="{% static 'index/img/b1/bottom-2.jpg' %}" alt="">
                                 <small>满99元减10元，满159元减30元</small>
                                 <p>齐齐熊衣橱换新颜特卖专场 <span><b>1</b>折起</span></p>
                                 <span> <i></i>剩余：3天10小时23分钟20秒</span>
                             </li>
                             <li>
-                                <img src="../img/b1/bottom-3.jpg" alt="">
+                                <img src="{% static 'index/img/b1/bottom-3.jpg' %}" alt="">
                                 <small>满99元减10元，满159元减30元</small>
                                 <p>齐齐熊衣橱换新颜特卖专场 <span><b>1</b>折起</span></p>
                                 <span> <i></i>剩余：3天10小时23分钟20秒</span>
                             </li>
-                            <li>
-                                <img src="../img/b1/bottom-4.jpg" alt="">
-                                <small>满99元减10元，满159元减30元</small>
-                                <p>齐齐熊衣橱换新颜特卖专场 <span><b>1</b>折起</span></p>
-                                <span> <i></i>剩余：3天10小时23分钟20秒</span>
-                            </li>-->
+{#                            <li>#}
+{#                                <img src="../img/b1/bottom-4.jpg" alt="">#}
+{#                                <small>满99元减10元，满159元减30元</small>#}
+{#                                <p>齐齐熊衣橱换新颜特卖专场 <span><b>1</b>折起</span></p>#}
+{#                                <span> <i></i>剩余：3天10小时23分钟20秒</span>#}
+{#                            </li>#}
                         </ul>
                     </div>
                 </div>
@@ -1349,4 +1351,6 @@
         spaceBetween: 30,
         loop: true
     });
+
+
 </script>

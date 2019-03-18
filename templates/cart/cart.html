@@ -16,10 +16,21 @@
     <div class="top-nav">
         <div class="wrapper">
             <ul>
-                <li>
-                    <i class="tag-user"></i>
-                    <span> 1511***6514 <a href="index.html">[退出]</a></span>
-                </li>
+                {% if user %}
+                    <li>
+                        {{ user.username }}
+                    </li>
+                    <li>
+                        <a href="{% url 'app:logout' %}">退出</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{% url 'app:login' %}">登录</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'app:register' %}">免费注册</a>
+                    </li>
+                {% endif %}
                 <li class="seg"></li>
                 <li><a href="#">消息</a></li>
                 <li class="seg"></li>
@@ -67,42 +78,20 @@
             <div class="cart-list">
                 <form action="" class="form1">
                     <table>
-                        <thead>
-                        <tr>
-                            <th><input type="checkbox" checked>全选</th>
-                            <th>商品</th>
-                            <th>商品信息</th>
-                            <th>单价</th>
-                            <th>数量</th>
-                            <th>小计（元）</th>
-                            <th>操作</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr class="seg-entry"></tr>
-                        <tr class="seg-entry eventEntry">
-                            <td colspan="7">
-                                <input type="checkbox" checked class="checkBox1">
-                                <span>
-                                    猫人儿童童装内衣专场
-                                    <em>满减</em>
-                                    <span>满99元减10元，满199元件60元</span>
-                                </span>
-                            </td>
-                        </tr>
                         <!--添加商品-->
-                        <!--<tr class="item-entry">
+                        {% for cart in carts %}
+                            <tr class="item-entry">
                             <td class="cart-check"><input type="checkbox"></td>
                             <td class="cart-info">
-                                <a href="#" class="image"> <img class="cartImg" src="../img/b2/tr-1.jpg" alt=""></a>
-                                <a href="#" class="word">MIIOWKIDS 猫人儿童 女童莱卡   套服 KU247003</a>
+                                <a href="#" class="image"> <img class="cartImg" src="{{ cart.goods.img }}" alt=""></a>
+                                <a href="#" class="word">{{ cart.goods.word }}</a>
                             </td>
                             <td class="cart-color">
                                 <p>颜色：浅丁香</p>
                                 <p>尺码：110</p>
                             </td>
                             <td class="cart-price">
-                                <p class="rel-price"> 49.00</p>
+                                <p class="rel-price"> {{ cart.goods.price }}</p>
                                 <p><del>399.00</del></p>
                             </td>
                             <td class="cart-num">
@@ -118,35 +107,13 @@
                             <td class="cart-del">
                                 <a href="#"> 删除</a>
                             </td>
-                        </tr>-->
-                        <tr class="foot-entry">
-                            <td colspan="7">
-                                <div class="subtotal-row">
-                                    <span class="countPrice price">00.00</span>
-                                    <span class="word">小计:</span>
-                                </div>
-                                <div class="subtotal-row">
-                                    <span class="delPrice price">-10.00</span>
-                                    <span class="word">专场满减：</span>
-                                </div>
-                                <div class="subtotal-notice">
-                                    <p>
-                                        <span>满520元可优惠60元</span>
-                                        <a href="#">去凑凑看>></a>
-                                    </p>
-                                </div>
-                                <div class="subtotal-line"></div>
-                                <div class="subtotal-row account">
-                                    <span>137.00</span>
-                                </div>
-                            </td>
                         </tr>
-                        </tbody>
+                        {% endfor %}
                     </table>
                     <div class="pay-bar">
                         <a href="#">确认订单</a>
                         <span class="cart-payment">￥<b></b></span>
-                        <span class="cart-summary">共有 <span class="cartNum"><b></b></span>件商品,已优惠 <strong style="color: #FF5482;font-weight: 400">10.00</strong> 元，总计(不含运费)：</span>
+                        <span class="cart-summary">共有 <span class="cartNum"><b></b></span>件商品<strong style="color: #FF5482;font-weight: 400"></strong> 总计(不含运费)：</span>
                         <div class="cart-total">
                             <input type="checkbox" class="checkBox3" checked>
                             <label>全选</label>
@@ -160,7 +127,7 @@
                             <i></i>
                             <span>你的购物车还是空的，赶紧去挑选商品吧</span>
                         </p>
-                        <p class="p2"><a href="index.html">去看看正在特卖中的品牌商品>></a></p>
+                        <p class="p2"><a href="{% url 'app:index' %}">去看看正在特卖中的品牌商品>></a></p>
                         <p>&nbsp;</p>
                         <p class="p3"><i></i><a href="#">刷新我的购物车</a></p>
                     </div>

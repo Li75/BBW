@@ -33,66 +33,73 @@
 </div>
 <!--顶部导航===================================================================-->
 <div class="top-nav">
-    <div class="wrapper">
-        <ul>
-            <li  class="userss" style="display: none">
-                <i class="tag-user"></i>
-                <span style="color: #f34660"> <span class="phoneNum">1511***6514</span> <a href="#" class="quit">[退出]</a></span>
-            </li>
-            <li id="nav-user">您好，
-                <a href="#">请登录</a>
-                <a href="#" class="free-register">免费注册</a>
-            </li>
-            <li class="seg"></li>
-            <li>
-                <a href="#">商家中心</a>
-            </li>
-            <li class="seg"></li>
-            <li class="contact-service">
-                <a href="#"><i class="person"></i>联系客服</a>
-                <i class="top-v"></i>
-                <!--联系客服，帮助中心 mouseover-->
-                <div class="top-help">
-                    <a href="#">帮助中心</a>
-                    <i class="mark"></i>
-                </div>
-            </li>
-            <li class="seg"></li>
-            <li class="attention">
-                <a href="#">关注<i class="top-v2"></i></a>
-                <div class="top-club">
-                    <div class="club-left">
-                        <p>微信号：beibeiclub</p>
-                        <img src="{% static 'product-detailes/img/b0/beibeiclub.png' %}" alt="">
-                        <p style="margin-top: -15px">订阅贝贝官网微信</p>
+        <div class="wrapper">
+            <ul>
+                {% if user %}
+                    <li>
+                        {{ user.username }}
+                    </li>
+                    <li>
+                        <a href="{% url 'app:logout' %}">退出</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{% url 'app:login' %}">登录</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'app:register' %}">免费注册</a>
+                    </li>
+                {% endif %}
+                <li class="seg"></li>
+                <li>
+                    <a href="#">商家中心</a>
+                </li>
+                <li class="seg"></li>
+                <li class="contact-service">
+                    <a href="#"><i class="person"></i>联系客服</a>
+                    <i class="top-v"></i>
+                    <!--联系客服，帮助中心 mouseover-->
+                    <div class="top-help">
+                        <a href="#">帮助中心</a>
+                        <i class="mark"></i>
                     </div>
-                    <div class="club-right">
-                        <img src="{% static 'product-detailes/img/b0/top-qq.png' %}" alt="">
-                        <img src="{% static 'product-detailes/img/b0/top-weibo.png' %}" alt="">
+                </li>
+                <li class="seg"></li>
+                <li class="attention">
+                    <a href="#">关注<i class="top-v2"></i></a>
+                    <div class="top-club">
+                        <div class="club-left">
+                            <p>微信号：beibeiclub</p>
+                            <img src="{% static 'index/img/b0/beibeiclub.png' %}" alt="">
+                            <p style="margin-top: -15px">订阅贝贝官网微信</p>
+                        </div>
+                        <div class="club-right">
+                            <img src="{% static 'index/img/b0/top-qq.png' %}" alt="">
+                            <img src="{% static 'index/img/b0/top-weibo.png' %}" alt="">
+                        </div>
                     </div>
-                </div>
-            </li>
-        </ul>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
 <!--head头部====================================================================-->
 <div id="head">
     <div class="wrapper">
         <div class="main-logo">
             <div id="logo">
                 <i></i>
-                <a href="index.html"><img class="logo-left" src="{% static 'product-detailes/img/b0/head-left.png' %}" alt=""></a>
+                <a href="{% url 'app:index' %}"><img class="logo-left" src="{% static 'product-detailes/img/b0/head-left.png' %}" alt=""></a>
                 <img class="logo-right" src="{% static 'product-detailes/img/b0/head_right.png' %}" alt="">
             </div>
             <div id="head-car">
-                <a href="cart.html">
+                <a href="{% url 'app:cart' %}">
                     <img class="logo-car" src="{% static 'product-detailes/img/b0/head-car.png' %}" alt="">
                 </a>
                 <div class="headCart">
                     <ul class="cart-list">
-                        <!--<li>
+                        <li>
                             <div class="cart-img">
-                                <img src="../img/goods%20detail/small-1.jpg" alt="">
+                                <img src="{% static 'product-detailes/img/goods detail/small-1.jpg' %}" alt="">
                             </div>
                             <div class="cart-con">
                                 <p class="conDetail"><a href="#">鸾恋树 新品双面呢修身中长款羊毛呢子大衣</a></p>
@@ -102,7 +109,7 @@
                                 <p class="priceInt">￥79.00</p>
                                 <p class="priceNum">x1</p>
                             </div>
-                        </li>-->
+                        </li>
                     </ul>
                     <div class="cart-account">
                         <div class="accountPrice">
@@ -110,7 +117,7 @@
                         </div>
                         <div class="accountGo">
                             <i class="cart-icon"></i>
-                            <a href="cart.html">去购物车结算</a>
+                            <a href="{% url 'app:cart' %}">去购物车结算</a>
                         </div>
                     </div>
                 </div>
@@ -505,23 +512,23 @@
                 <!--详情图片-->
                 <div class="m-img">
                     <div class="main-img">
-                       <!-- <img class="smallImg" src="../img/goods%20detail/big-1.jpg" alt="">-->
+                       <img class="smallImg" src="{% static 'product-detailes/img/goods detail/big1-1.jpg' %}" alt="">
                         <div class="smallArea" ></div>
                     </div>
                     <div class="bigArea">
-                        <!--<img class="bigImg" src="../img/goods%20detail/big-1.jpg" alt="">-->
+                        <img class="bigImg" src="{% static 'product-detailes/img/goods detail/big1-1.jpg' %}" alt="">
                     </div>
                     <span class="lt"><</span>
                     <div class="m-smallImg">
                         <ul class="img-list">
-                            <!--<li class="iActive"><img src="../img/goods%20detail/big-1.jpg" alt=""></li>
-                            <li><img src="../img/goods%20detail/big-2.jpg" alt=""></li>
-                            <li><img src="../img/goods%20detail/big-3.jpg" alt=""></li>
-                            <li><img src="../img/goods%20detail/big-4.jpg" alt=""></li>
-                            <li><img src="../img/goods%20detail/big-5.jpg" alt=""></li>
-                            <li><img src="../img/goods%20detail/big-6.jpg" alt=""></li>
-                            <li><img src="../img/goods%20detail/big-7.jpg" alt=""></li>
-                            <li><img src="../img/goods%20detail/big-8.jpg" alt=""></li>-->
+                            <li class="iActive"><img src="{% static 'product-detailes/img/goods detail/big1-1.jpg' %}" alt=""></li>
+                            <li><img src="{% static 'product-detailes/img/goods detail/big1-2.jpg' %}" alt=""></li>
+                            <li><img src="{% static 'product-detailes/img/goods detail/big1-3.jpg' %}" alt=""></li>
+                            <li><img src="{% static 'product-detailes/img/goods detail/big1-4.jpg' %}" alt=""></li>
+                            <li><img src="{% static 'product-detailes/img/goods detail/big1-5.jpg' %}" alt=""></li>
+                            <li><img src="{% static 'product-detailes/img/goods detail/big1-6.jpg' %}" alt=""></li>
+                            <li><img src="{% static 'product-detailes/img/goods detail/big1-7.jpg' %}" alt=""></li>
+                            <li><img src="{% static 'product-detailes/img/goods detail/big1-8.jpg' %}" alt=""></li>
                         </ul>
                     </div>
                     <span class="gt">></span>
@@ -662,7 +669,7 @@
                         <!--立即抢购按钮-->
                         <div class="buyBar">
                             <i></i>
-                            <a>立即抢购</a>
+                            <a href="{% url 'app:cart' %}">立即抢购</a>
                         </div>
                         <!--计时器-->
                         <div class="time">

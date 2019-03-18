@@ -35,7 +35,7 @@ $(function () {
         $(".cart-box").find(".headCart").hide();
     })
     $(".accountGo").click(function () {
-        location.href = "cart.html";
+        location.href = "/cart/";
     });
 
 //小购物车
@@ -226,7 +226,7 @@ $(function () {
                 $.cookie("cart", JSON.stringify(arr), {expires:30, path:"/"});
                 console.log( $.cookie("cart") );
             }else {
-                console.log(00);
+                console.log(0);
                 alert("请先注册后再加入购物车！");
             }
 

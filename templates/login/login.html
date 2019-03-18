@@ -45,35 +45,27 @@
                 <div id="phoneNum">
                     <i></i>
                     <input id="phone-num" name="phone" type="text" placeholder="您的手机号">
+                    <p style="color: red;font-size: 14px">{{ user_err }}</p>
                 </div>
                 <!--手机号验证提示-->
-                <div id="phoneNotice">
-                    <span style="color: red">{{ user_err }}</span>
-
-                </div>
+{#                <div id="phoneNotice">#}
+{#                    <span style="color: red">{{ }}</span>#}
+{##}
+{#                </div>#}
 
                 <!--密码-->
                 <div id="pwdNum">
                     <i class="person1"></i>
                     <input type="password"  name="password" id="password" placeholder="密码，6-16位字母、数字或符号">
+                    <p style="color: red;font-size: 14px">{{ pwd_err }}</p>
                 </div>
                 <!--密码验证提示-->
-                <div id="pwdNotice">
-                    <span style="color:red;">{{ pwd_err }}</span>
-                </div>
-
-                <!--滑块-->
-{#                <div id="scale">#}
-{#                    <span id="scale-bg">>></span>#}
-{#                    <div id="scale-text">#}
-{#                        <span>请按住滑块，拖到最右边</span>#}
-{#                    </div>#}
+{#                <div id="pwdNotice">#}
+{#                    <span style="color:red;">{{ pwd_err }}</span>#}
 {#                </div>#}
-                <!--滑块验证提示-->
-                <div id="scaleNotice">
-                    <span>!</span>
-                    请输入正确的密码！
-                </div>
+
+
+
 
                 <!--注册button按钮-->
 

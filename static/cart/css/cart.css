@@ -164,7 +164,7 @@
 }
 /*from2*/
 .cart-list .form2{
-    /*display: none;*/
+    display: none;
     padding-top:40px;
     padding-bottom: 130px;
 }
@@ -217,7 +217,7 @@
 }
 /*form1*/
 .cart-list .form1{
-    display: none;
+    display: block;
 }
 .cart-list table{
     width: 100%;

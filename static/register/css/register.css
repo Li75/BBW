@@ -306,4 +306,12 @@
 
 
 }
+.err{
+    color: red;
+    font-size: 12px;
+}
+.success{
+    color: green;
+    font-size: 12px;
+}
 
